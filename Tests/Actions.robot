@@ -24,6 +24,7 @@ Verify login success with valid credentials
         Maximize Browser Window
         
         #right click
+        Wait Until Element Is Visible    xpath://a[normalize-space()='Mobiles']    10s
         Open Context Menu    xpath://a[normalize-space()='Mobiles']
         Sleep    2s
 
