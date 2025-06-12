@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3 (Python 3.13.4 on win32)" generated="2025-06-12T12:12:51.908653" rpa="false" schemaversion="5">
+<suite id="s1" name="DELETETask" source="C:\Users\kkula\PycharmProjects\JuneRoboFWEGIndia2025\API\DELETETask.robot">
+<test id="s1-t1" name="DELETe request example" line="9">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-06-12T12:12:52.438732" level="INFO">Creating Session using : alias=baseURI, url=https://videogamedb.uk:443/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<arg>baseURI</arg>
+<arg>${base_url}</arg>
+<arg>verify=True</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-06-12T12:12:52.438234" elapsed="0.000903"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-06-12T12:12:52.440450" level="INFO">&amp;{headers} = { content-type=application/json }</msg>
+<var>&amp;{headers}</var>
+<arg>content-type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-06-12T12:12:52.439877" elapsed="0.000629"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-06-12T12:12:52.441207" level="INFO">&amp;{headers} = { }</msg>
+<var>&amp;{headers}</var>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-06-12T12:12:52.440890" elapsed="0.000358"/>
+</kw>
+<kw name="DELETE On Session" owner="RequestsLibrary">
+<msg time="2025-06-12T12:12:52.772577" level="INFO">DELETE Request : url=https://videogamedb.uk:443/api/v2/videogame/2 
+ path_url=/api/v2/videogame/2 
+ headers={'User-Agent': 'python-requests/2.32.4', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2025-06-12T12:12:52.772786" level="INFO">DELETE Response : url=https://videogamedb.uk:443/api/v2/videogame/2 
+ status=200, reason= 
+ headers={'vary': 'Origin, Access-Control-Request-Method, Access-Control-Request-Headers', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'cache-control': 'no-cache, no-store, max-age=0, must-revalidate', 'pragma': 'no-cache', 'expires': '0', 'x-frame-options': 'DENY', 'content-type': 'text/plain;charset=UTF-8', 'content-encoding': 'gzip', 'date': 'Thu, 12 Jun 2025 06:42:53 GMT', 'transfer-encoding': 'chunked', 'server': 'Fly/3e8bebaf (2025-06-05)', 'via': '1.1 fly.io, 1.1 fly.io', 'fly-request-id': '01JXHE13PMQHBYC0XM88DNC5NG-bom'} 
+ body=Video game deleted 
+ </msg>
+<msg time="2025-06-12T12:12:52.773051" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>baseURI</arg>
+<arg>${Servicename}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-06-12T12:12:52.441556" elapsed="0.331555"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-12T12:12:52.774118" level="INFO">&lt;Response [200]&gt;</msg>
+<arg>${response}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-12T12:12:52.773810" elapsed="0.000381"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-12T12:12:52.775227" level="INFO">200</msg>
+<arg>${response.status_code}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-12T12:12:52.774499" elapsed="0.000798"/>
+</kw>
+<status status="PASS" start="2025-06-12T12:12:52.436897" elapsed="0.338812"/>
+</test>
+<status status="PASS" start="2025-06-12T12:12:51.912897" elapsed="0.864234"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="DELETETask" id="s1" pass="1" fail="0" skip="0">DELETETask</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

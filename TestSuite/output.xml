@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3 (Python 3.13.4 on win32)" generated="2025-06-09T16:11:20.887905" rpa="false" schemaversion="5">
+<suite id="s1" name="Login" source="C:\Users\kkula\PycharmProjects\JuneRoboFWEGIndia2025\TestSuite\Login.robot">
+<test id="s1-t1" name="Verify login success with valid credentials" line="9">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-06-09T16:11:21.467543" level="INFO">Opening browser 'Edge' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-06-09T16:11:21.466997" elapsed="18.219207"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-06-09T16:11:39.687083" elapsed="0.045156"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://input[@placeholder='Username']</arg>
+<arg>timeout=5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-09T16:11:39.733122" elapsed="0.628510"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-09T16:11:40.362851" level="INFO">Typing text 'Admin' into text field 'xapth://input[@placeholder='Username']'.</msg>
+<msg time="2025-06-09T16:11:40.709554" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-06-09T16:11:40.710026" level="FAIL">Element with locator 'xapth://input[@placeholder='Username']' not found.</msg>
+<arg>xapth://input[@placeholder='Username']</arg>
+<arg>Admin</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2025-06-09T16:11:40.362364" elapsed="0.355277">Element with locator 'xapth://input[@placeholder='Username']' not found.</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>xapth://input[@placeholder='Username']</arg>
+<arg>admin123</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-06-09T16:11:40.718644" elapsed="0.000118"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath://button[@type='submit']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-06-09T16:11:40.719430" elapsed="0.000074"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<arg>xpath://div[@class='oxd-topbar-header-title']</arg>
+<arg>timeout=5</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-06-09T16:11:40.720059" elapsed="0.000065"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2025-06-09T16:11:40.720718" elapsed="0.000071"/>
+</kw>
+<doc>This testcase verifies that the user is able to successfully login to the internet.herokuapp</doc>
+<status status="FAIL" start="2025-06-09T16:11:21.464986" elapsed="19.256647">Element with locator 'xapth://input[@placeholder='Username']' not found.</status>
+</test>
+<status status="FAIL" start="2025-06-09T16:11:20.892734" elapsed="19.832137"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Login" id="s1" pass="0" fail="1" skip="0">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

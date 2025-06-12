@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3 (Python 3.13.4 on win32)" generated="2025-06-11T12:27:55.471520" rpa="false" schemaversion="5">
+<suite id="s1" name="Table" source="C:\Users\kkula\PycharmProjects\JuneRoboFWEGIndia2025\Selenium\Table.robot">
+<test id="s1-t1" name="Log All Table Data" line="9">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-06-11T12:27:56.068475" level="INFO">Opening browser 'Edge' to base url 'https://the-internet.herokuapp.com/tables'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-06-11T12:27:56.067463" elapsed="6.510173"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-06-11T12:28:02.578780" elapsed="0.053479"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-11T12:28:03.635008" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-11T12:28:02.633394" elapsed="1.002005"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2025-06-11T12:28:03.672281" level="INFO">${rows} = 4</msg>
+<var>${rows}</var>
+<arg>xpath://table[@id='table1']/tbody/tr</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2025-06-11T12:28:03.636331" elapsed="0.036048"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-11T12:28:03.673639" level="INFO">Total Rows: 4</msg>
+<arg>Total Rows: ${rows}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-11T12:28:03.673200" elapsed="0.000541"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2025-06-11T12:28:03.696231" level="INFO">${cols} = 6</msg>
+<var>${cols}</var>
+<arg>xpath://table[@id='table1']/tbody/tr[${rowIndex}]/td</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2025-06-11T12:28:03.675875" elapsed="0.020434"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-11T12:28:03.759548" level="INFO">${cellText} = Smith</msg>
+<var>${cellText}</var>
+<arg>xpath://table[@id='table1']/tbody/tr[${rowIndex}]/td[${colIndex}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-11T12:28:03.697847" elapsed="0.061877"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-11T12:28:03.760680" level="INFO">Row 1 Col 1: Smith</msg>
+<arg>Row ${rowIndex} Col ${colIndex}: ${cellText}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-11T12:28:03.760205" elapsed="0.000608"/>
+</kw>
+<var name="${colIndex}">1</var>
+<status status="PASS" start="2025-06-11T12:28:03.697639" elapsed="0.063289"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-11T12:28:03.789969" level="INFO">${cellText} = John</msg>
+<var>${cellText}</var>
+<arg>xpath://table[@id='table1']/tbody/tr[${rowIndex}]/td[${colIndex}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-11T12:28:03.761553" elapsed="0.028562"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-11T12:28:03.791180" level="INFO">Row 1 Col 2: John</msg>
+<arg>Row ${rowIndex} Col ${colIndex}: ${cellText}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-11T12:28:03.790693" elapsed="0.000594"/>
+</kw>
+<var name="${colIndex}">2</var>
+<status status="PASS" start="2025-06-11T12:28:03.761303" elapsed="0.030077"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-11T12:28:03.821567" level="INFO">${cellText} = jsmith@gmail.com</msg>
+<var>${cellText}</var>
+<arg>xpath://table[@id='table1']/tbody/tr[${rowIndex}]/td[${colIndex}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-11T12:28:03.791768" elapsed="0.029911"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-11T12:28:03.822513" level="INFO">Row 1 Col 3: jsmith@gmail.com</msg>
+<arg>Row ${rowIndex} Col ${colIndex}: ${cellText}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-11T12:28:03.822084" elapsed="0.000541"/>
+</kw>
+<var name="${colIndex}">3</var>
+<status status="PASS" start="2025-06-11T12:28:03.791605" elapsed="0.031112"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-11T12:28:03.879743" level="INFO">${cellText} = $50.00</msg>
+<var>${cellText}</var>
+<arg>xpath://table[@id='table1']/tbody/tr[${rowIndex}]/td[${colIndex}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-11T12:28:03.823193" elapsed="0.056682"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-11T12:28:03.881026" level="INFO">Row 1 Col 4: $50.00</msg>
+<arg>Row ${rowIndex} Col ${colIndex}: ${cellText}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-11T12:28:03.880340" elapsed="0.000798"/>
+</kw>
+<var name="${colIndex}">4</var>
+<status status="PASS" start="2025-06-11T12:28:03.822964" elapsed="0.058274"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-11T12:28:03.913851" level="INFO">${cellText} = http://www.jsmith.com</msg>
+<var>${cellText}</var>
+<arg>xpath://table[@id='table1']/tbody/tr[${rowIndex}]/td[${colIndex}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-11T12:28:03.881962" elapsed="0.031965"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-11T12:28:03.914510" level="INFO">Row 1 Col 5: http://www.jsmith.com</msg>
+<arg>Row ${rowIndex} Col ${colIndex}: ${cellText}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-11T12:28:03.914195" elapsed="0.000386"/>
+</kw>
+<var name="${colIndex}">5</var>
+<status status="PASS" start="2025-06-11T12:28:03.881641" elapsed="0.033009"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-11T12:28:03.943694" level="INFO">${cellText} = edit delete</msg>
+<var>${cellText}</var>
+<arg>xpath://table[@id='table1']/tbody/tr[${rowIndex}]/td[${colIndex}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-11T12:28:03.915005" elapsed="0.028781"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-11T12:28:03.944918" level="INFO">Row 1 Col 6: edit delete</msg>
+<arg>Row ${rowIndex} Col ${colIndex}: ${cellText}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-11T12:28:03.944267" elapsed="0.000783"/>
+</kw>
+<var name="${colIndex}">6</var>
+<status status="PASS" start="2025-06-11T12:28:03.914837" elapsed="0.030337"/>
+</iter>
+<var>${colIndex}</var>
+<value>1</value>
+<value>${cols+1}</value>
+<status status="PASS" start="2025-06-11T12:28:03.696475" elapsed="0.248862"/>
+</for>
+<var name="${rowIndex}">1</var>
+<status status="PASS" start="2025-06-11T12:28:03.675662" elapsed="0.270062"/>
+</iter>
+<iter>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2025-06-11T12:28:03.965303" level="INFO">${cols} = 6</msg>
+<var>${cols}</var>
+<arg>xpath://table[@id='table1']/tbody/tr[${rowIndex}]/td</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2025-06-11T12:28:03.946344" elapsed="0.019050"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-11T12:28:04.002791" level="INFO">${cellText} = Bach</msg>
+<var>${cellText}</var>
+<arg>xpath://table[@id='table1']/tbody/tr[${rowIndex}]/td[${colIndex}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-11T12:28:03.966717" elapsed="0.036166"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-11T12:28:04.004469" level="INFO">Row 2 Col 1: Bach</msg>
+<arg>Row ${rowIndex} Col ${colIndex}: ${cellText}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-11T12:28:04.003901" elapsed="0.000692"/>
+</kw>
+<var name="${colIndex}">1</var>
+<status status="PASS" start="2025-06-11T12:28:03.966486" elapsed="0.038227"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-11T12:28:04.035313" level="INFO">${cellText} = Frank</msg>
+<var>${cellText}</var>
+<arg>xpath://table[@id='table1']/tbody/tr[${rowIndex}]/td[${colIndex}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-11T12:28:04.005193" elapsed="0.030202"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-11T12:28:04.036022" level="INFO">Row 2 Col 2: Frank</msg>
+<arg>Row ${rowIndex} Col ${colIndex}: ${cellText}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-11T12:28:04.035695" elapsed="0.000397"/>
+</kw>
+<var name="${colIndex}">2</var>
+<status status="PASS" start="2025-06-11T12:28:04.004989" elapsed="0.031191"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-11T12:28:04.064650" level="INFO">${cellText} = fbach@yahoo.com</msg>
+<var>${cellText}</var>
+<arg>xpath://table[@id='table1']/tbody/tr[${rowIndex}]/td[${colIndex}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-11T12:28:04.036602" elapsed="0.028134"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-11T12:28:04.065392" level="INFO">Row 2 Col 3: fbach@yahoo.com</msg>
+<arg>Row ${rowIndex} Col ${colIndex}: ${cellText}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-11T12:28:04.065033" elapsed="0.000434"/>
+</kw>
+<var name="${colIndex}">3</var>
+<status status="PASS" start="2025-06-11T12:28:04.036430" elapsed="0.029112"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-11T12:28:04.123482" level="INFO">${cellText} = $51.00</msg>
+<var>${cellText}</var>
+<arg>xpath://table[@id='table1']/tbody/tr[${rowIndex}]/td[${colIndex}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-11T12:28:04.065983" elapsed="0.057593"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-11T12:28:04.124305" level="INFO">Row 2 Col 4: $51.00</msg>
+<arg>Row ${rowIndex} Col ${colIndex}: ${cellText}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-11T12:28:04.123911" elapsed="0.000478"/>
+</kw>
+<var name="${colIndex}">4</var>
+<status status="PASS" start="2025-06-11T12:28:04.065799" elapsed="0.058679"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-11T12:28:04.200288" level="INFO">${cellText} = http://www.frank.com</msg>
+<var>${cellText}</var>
+<arg>xpath://table[@id='table1']/tbody/tr[${rowIndex}]/td[${colIndex}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-11T12:28:04.124919" elapsed="0.075461"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-11T12:28:04.201158" level="INFO">Row 2 Col 5: http://www.frank.com</msg>
+<arg>Row ${rowIndex} Col ${colIndex}: ${cellText}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-11T12:28:04.200689" elapsed="0.000563"/>
+</kw>
+<var name="${colIndex}">5</var>
+<status status="PASS" start="2025-06-11T12:28:04.124734" elapsed="0.076608"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-11T12:28:04.258995" level="INFO">${cellText} = edit delete</msg>
+<var>${cellText}</var>
+<arg>xpath://table[@id='table1']/tbody/tr[${rowIndex}]/td[${colIndex}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-11T12:28:04.201748" elapsed="0.057413"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-11T12:28:04.260345" level="INFO">Row 2 Col 6: edit delete</msg>
+<arg>Row ${rowIndex} Col ${colIndex}: ${cellText}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-11T12:28:04.259704" elapsed="0.000792"/>
+</kw>
+<var name="${colIndex}">6</var>
+<status status="PASS" start="2025-06-11T12:28:04.201551" elapsed="0.059089"/>
+</iter>
+<var>${colIndex}</var>
+<value>1</value>
+<value>${cols+1}</value>
+<status status="PASS" start="2025-06-11T12:28:03.965566" elapsed="0.295215"/>
+</for>
+<var name="${rowIndex}">2</var>
+<status status="PASS" start="2025-06-11T12:28:03.946106" elapsed="0.314854"/>
+</iter>
+<iter>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2025-06-11T12:28:04.281658" level="INFO">${cols} = 6</msg>
+<var>${cols}</var>
+<arg>xpath://table[@id='table1']/tbody/tr[${rowIndex}]/td</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2025-06-11T12:28:04.261636" elapsed="0.020144"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-11T12:28:04.323445" level="INFO">${cellText} = Doe</msg>
+<var>${cellText}</var>
+<arg>xpath://table[@id='table1']/tbody/tr[${rowIndex}]/td[${colIndex}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-11T12:28:04.284024" elapsed="0.039573"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-11T12:28:04.324464" level="INFO">Row 3 Col 1: Doe</msg>
+<arg>Row ${rowIndex} Col ${colIndex}: ${cellText}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-11T12:28:04.324000" elapsed="0.000577"/>
+</kw>
+<var name="${colIndex}">1</var>
+<status status="PASS" start="2025-06-11T12:28:04.283667" elapsed="0.041018"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-11T12:28:04.348936" level="INFO">${cellText} = Jason</msg>
+<var>${cellText}</var>
+<arg>xpath://table[@id='table1']/tbody/tr[${rowIndex}]/td[${colIndex}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-11T12:28:04.325141" elapsed="0.023959"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-11T12:28:04.349996" level="INFO">Row 3 Col 2: Jason</msg>
+<arg>Row ${rowIndex} Col ${colIndex}: ${cellText}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-11T12:28:04.349471" elapsed="0.000658"/>
+</kw>
+<var name="${colIndex}">2</var>
+<status status="PASS" start="2025-06-11T12:28:04.324923" elapsed="0.025339"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-11T12:28:04.374115" level="INFO">${cellText} = jdoe@hotmail.com</msg>
+<var>${cellText}</var>
+<arg>xpath://table[@id='table1']/tbody/tr[${rowIndex}]/td[${colIndex}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-11T12:28:04.350822" elapsed="0.023358"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-11T12:28:04.374576" level="INFO">Row 3 Col 3: jdoe@hotmail.com</msg>
+<arg>Row ${rowIndex} Col ${colIndex}: ${cellText}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-11T12:28:04.374357" elapsed="0.000267"/>
+</kw>
+<var name="${colIndex}">3</var>
+<status status="PASS" start="2025-06-11T12:28:04.350582" elapsed="0.024081"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-11T12:28:04.420263" level="INFO">${cellText} = $100.00</msg>
+<var>${cellText}</var>
+<arg>xpath://table[@id='table1']/tbody/tr[${rowIndex}]/td[${colIndex}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-11T12:28:04.374859" elapsed="0.045522"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-11T12:28:04.421901" level="INFO">Row 3 Col 4: $100.00</msg>
+<arg>Row ${rowIndex} Col ${colIndex}: ${cellText}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-11T12:28:04.421232" elapsed="0.000791"/>
+</kw>
+<var name="${colIndex}">4</var>
+<status status="PASS" start="2025-06-11T12:28:04.374774" elapsed="0.047392"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-11T12:28:04.450999" level="INFO">${cellText} = http://www.jdoe.com</msg>
+<var>${cellText}</var>
+<arg>xpath://table[@id='table1']/tbody/tr[${rowIndex}]/td[${colIndex}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-11T12:28:04.422686" elapsed="0.028382"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-11T12:28:04.451552" level="INFO">Row 3 Col 5: http://www.jdoe.com</msg>
+<arg>Row ${rowIndex} Col ${colIndex}: ${cellText}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-11T12:28:04.451301" elapsed="0.000291"/>
+</kw>
+<var name="${colIndex}">5</var>
+<status status="PASS" start="2025-06-11T12:28:04.422477" elapsed="0.029158"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-11T12:28:04.472390" level="INFO">${cellText} = edit delete</msg>
+<var>${cellText}</var>
+<arg>xpath://table[@id='table1']/tbody/tr[${rowIndex}]/td[${colIndex}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-11T12:28:04.451855" elapsed="0.020594"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-11T12:28:04.472850" level="INFO">Row 3 Col 6: edit delete</msg>
+<arg>Row ${rowIndex} Col ${colIndex}: ${cellText}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-11T12:28:04.472653" elapsed="0.000227"/>
+</kw>
+<var name="${colIndex}">6</var>
+<status status="PASS" start="2025-06-11T12:28:04.451763" elapsed="0.021148"/>
+</iter>
+<var>${colIndex}</var>
+<value>1</value>
+<value>${cols+1}</value>
+<status status="PASS" start="2025-06-11T12:28:04.282049" elapsed="0.190909"/>
+</for>
+<var name="${rowIndex}">3</var>
+<status status="PASS" start="2025-06-11T12:28:04.261329" elapsed="0.211679"/>
+</iter>
+<iter>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2025-06-11T12:28:04.485144" level="INFO">${cols} = 6</msg>
+<var>${cols}</var>
+<arg>xpath://table[@id='table1']/tbody/tr[${rowIndex}]/td</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2025-06-11T12:28:04.473187" elapsed="0.012018"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-11T12:28:04.510541" level="INFO">${cellText} = Conway</msg>
+<var>${cellText}</var>
+<arg>xpath://table[@id='table1']/tbody/tr[${rowIndex}]/td[${colIndex}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-11T12:28:04.485937" elapsed="0.024648"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-11T12:28:04.510895" level="INFO">Row 4 Col 1: Conway</msg>
+<arg>Row ${rowIndex} Col ${colIndex}: ${cellText}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-11T12:28:04.510733" elapsed="0.000192"/>
+</kw>
+<var name="${colIndex}">1</var>
+<status status="PASS" start="2025-06-11T12:28:04.485809" elapsed="0.025146"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-11T12:28:04.538894" level="INFO">${cellText} = Tim</msg>
+<var>${cellText}</var>
+<arg>xpath://table[@id='table1']/tbody/tr[${rowIndex}]/td[${colIndex}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-11T12:28:04.511105" elapsed="0.027878"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-11T12:28:04.539501" level="INFO">Row 4 Col 2: Tim</msg>
+<arg>Row ${rowIndex} Col ${colIndex}: ${cellText}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-11T12:28:04.539221" elapsed="0.000361"/>
+</kw>
+<var name="${colIndex}">2</var>
+<status status="PASS" start="2025-06-11T12:28:04.511040" elapsed="0.028604"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-11T12:28:04.567651" level="INFO">${cellText} = tconway@earthlink.net</msg>
+<var>${cellText}</var>
+<arg>xpath://table[@id='table1']/tbody/tr[${rowIndex}]/td[${colIndex}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-11T12:28:04.539899" elapsed="0.027846"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-11T12:28:04.568797" level="INFO">Row 4 Col 3: tconway@earthlink.net</msg>
+<arg>Row ${rowIndex} Col ${colIndex}: ${cellText}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-11T12:28:04.568146" elapsed="0.000801"/>
+</kw>
+<var name="${colIndex}">3</var>
+<status status="PASS" start="2025-06-11T12:28:04.539784" elapsed="0.029380"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-11T12:28:04.596361" level="INFO">${cellText} = $50.00</msg>
+<var>${cellText}</var>
+<arg>xpath://table[@id='table1']/tbody/tr[${rowIndex}]/td[${colIndex}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-11T12:28:04.569845" elapsed="0.026604"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-11T12:28:04.597267" level="INFO">Row 4 Col 4: $50.00</msg>
+<arg>Row ${rowIndex} Col ${colIndex}: ${cellText}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-11T12:28:04.596755" elapsed="0.000626"/>
+</kw>
+<var name="${colIndex}">4</var>
+<status status="PASS" start="2025-06-11T12:28:04.569561" elapsed="0.027921"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-11T12:28:04.619474" level="INFO">${cellText} = http://www.timconway.com</msg>
+<var>${cellText}</var>
+<arg>xpath://table[@id='table1']/tbody/tr[${rowIndex}]/td[${colIndex}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-11T12:28:04.597874" elapsed="0.021693"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-11T12:28:04.620463" level="INFO">Row 4 Col 5: http://www.timconway.com</msg>
+<arg>Row ${rowIndex} Col ${colIndex}: ${cellText}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-11T12:28:04.619949" elapsed="0.000613"/>
+</kw>
+<var name="${colIndex}">5</var>
+<status status="PASS" start="2025-06-11T12:28:04.597685" elapsed="0.023005"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-11T12:28:04.643924" level="INFO">${cellText} = edit delete</msg>
+<var>${cellText}</var>
+<arg>xpath://table[@id='table1']/tbody/tr[${rowIndex}]/td[${colIndex}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-11T12:28:04.621181" elapsed="0.022857"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-11T12:28:04.645078" level="INFO">Row 4 Col 6: edit delete</msg>
+<arg>Row ${rowIndex} Col ${colIndex}: ${cellText}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-11T12:28:04.644449" elapsed="0.000731"/>
+</kw>
+<var name="${colIndex}">6</var>
+<status status="PASS" start="2025-06-11T12:28:04.620964" elapsed="0.024320"/>
+</iter>
+<var>${colIndex}</var>
+<value>1</value>
+<value>${cols+1}</value>
+<status status="PASS" start="2025-06-11T12:28:04.485328" elapsed="0.160103"/>
+</for>
+<var name="${rowIndex}">4</var>
+<status status="PASS" start="2025-06-11T12:28:04.473121" elapsed="0.172477"/>
+</iter>
+<var>${rowIndex}</var>
+<value>1</value>
+<value>${rows+1}</value>
+<status status="PASS" start="2025-06-11T12:28:03.674231" elapsed="0.972073"/>
+</for>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-11T12:28:06.647840" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-11T12:28:04.647183" elapsed="2.000927"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-06-11T12:28:06.648851" elapsed="2.546364"/>
+</kw>
+<doc>Logs all data from the first table on the page</doc>
+<status status="PASS" start="2025-06-11T12:27:56.065608" elapsed="13.130350"/>
+</test>
+<status status="PASS" start="2025-06-11T12:27:55.475766" elapsed="13.722367"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Table" id="s1" pass="1" fail="0" skip="0">Table</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
